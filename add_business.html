@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Colorlib">
+    <meta name="description" content="#">
+    <meta name="keywords" content="#">
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="#">
+    <!-- Page Title -->
+    <title>TuDestinoRD</title>
+    <!-- Icono de la Penstaña -->
+    <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700,900" rel="stylesheet">
+    <!-- Simple line Icon -->
+    <link rel="stylesheet" href="../css/simple-line-icons.css">
+    <!-- Themify Icon -->
+    <link rel="stylesheet" href="../css/themify-icons.css">
+    <!-- Hover Effects -->
+    <link rel="stylesheet" href="../css/set1.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/layout.css">
+</head>
+
+<body>
+    <!--============================= HEADER =============================-->
+    <div class="dark-bg sticky-top">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <a class="navbar-brand" href="index.html">TuDestinoRD</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="icon-menu"></span>
+            </button>
+                        <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                            <ul class="navbar-nav">
+                                <
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="#">Sobre Nosotos</a>
+                                </li>
+                                <li><a href="#" class="btn btn-outline-light top-btn"><span
+                                            class="ti-user"></span>Inicial Sesion</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--//END HEADER -->
+    <!--============================= Formulario =============================-->
+
+    <section class="main-block1 light-bg">
+      <div class="title">
+      </div>
+      <div class="form">
+        <h5>Agregar Negocio</h5>
+        <hr>
+        <form>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputName_Group4">Nombre de Grupo</label>
+              <input type="text" class="form-control" id="businessName" placeholder="Nombre del Hotel o Restaurante">
+            </div>
+            <div class="form-group col-md-4">
+              <label for="inputNegocio">Tipo de Negocio</label>
+              <select id="inputNegocio" class="form-control" onchange="habilitar_input(this);">
+                <option value="" selected disabled></option>
+                <option>Hotel</option>
+                <option>Restaurante</option>
+              </select>
+          </div>
+            <div class="form-group col-md-4">
+              <label for="inputCategoria">Categoria</label>
+              <select id="inputCategoria" class="form-control" disabled>
+                <option selected>Eliga</option>
+                <option id="option1">1 Estrella (Economico)</option>
+                <option id="option2">2 Estrellas (Valor)</option>
+                <option id="option3">3 Estrellas (Calidad)</option>
+                <option id="option4">4 Estrellas (Superior)</option>
+                <option id="option5">5 Estrellas (Excepcional)</option>
+              </select>
+          </div>
+
+            <div class="form-group col-md-4">
+            <label for="inputProvincia">Provincia</label>
+            <select id="inputProvincia" class="form-control" disabled>
+            <option selected>Santo Domingo</option>
+            <option>Santiago</option>
+            <option>San Cristóbal</option>
+            <option>La Vega</option>
+            <option>Puerto Plata</option>
+            <option>San Pedro de Macorís</option>
+            <option>Duarte</option>
+            <option>La Altagracia</option>
+            <option>La Romana</option>
+            <option>San Juan</option>
+            <option>Espaillat</option>
+            <option>Azua</option>
+            <option>Barahona</option>
+            <option>Monte Plata</option>
+            <option>Peravia</option>
+            <option>Monseñor Nouel</option>
+            <option>Valverde</option>
+            <option>Sánchez Ramírez</option>
+            <option>María Trinidad Sánchez</option>
+            <option>Montecristi</option>
+            <option>Samaná</option>
+            <option>Bahoruco</option>
+            <option>Hermanas Mirabal</option>
+            <option>El Seibo</option>
+            <option>Hato Mayor</option>
+            <option>Dajabón</option>
+            <option>Elías Piña</option>
+            <option>San José de Ocoa</option>
+            <option>Santiago Rodríguez</option>
+            <option>Independencia</option>
+            <option>Pedernales</option>
+        </select>
+    </div>
+
+
+
+
+    <div id="descriptionContainer">
+      <input type="text" id="description" placeholder="descripcion">
+    </div>
+
+    <div id="rncContainer">
+      <input type="text" id="rnc" placeholder="rnc">
+    </div>
+
+    <div id="conceptContainer">
+      <select id="businessConcept" class="form-control" title="concepto">
+              <option value="" disabled selected></option>
+              <option>Comida rapida</option>
+              <option>Chino</option>
+              <option>etc</option>
+            </select>
+    </div>
+
+    <div id="kindOfEventContainer">
+      <select id="kindOfEvent" class="form-control" title="concepto">
+              <option value="" disabled selected></option>
+              <option>Afuera</option>
+              <option>Arte y cultura</option>
+            </select>
+    </div>
+
+
+
+
+    <div class="form-group col-md-3">
+      <label for="inputTelefono">Telefono</label>
+      <input type="tel" class="form-control" id="inputTelefono" placeholder="(###) ### ####" disabled>
+    </div>
+          <div class="form-group col-md-2">
+              <label for="inputHabitaciones">Habitaciones</label>
+            <input id="hotelRooms" type="number" placeholder="Numero de habitaciones">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="servicios_adicionales">Servicios Adicionales</label>
+            <div class="servicios_adi">
+            <select id="servicios_adicionales" class="form-control"
+             title="Debe ir seleccionado una a la vez"
+             disabled>
+              <option value="" disabled selected></option>
+              <option>Minibar</option>
+              <option>Piscinas</option>
+              <option>Saunas</option>
+              <option>Wi-Fi</option>
+              <option>Servicio de TV</option>
+              <option>Tiendas</option>
+              <option>Peluqueria</option>
+              <option>Guias Turisticas</option>
+              <option>Gimnasio</option>
+              <option>Sala Fitness</option>
+              <option>Salas de Eventos</option>
+            </select>
+            <button type="button" class="btn btn-info" id="btn_add">Agregar</button>
+            </div>
+           </div>
+           <div class="services_container" id="servicios_add">
+            </div>
+        </div>
+      </form>
+      
+      <button id="saveBtn" class="btn btn-success">Guardar</button>
+      </div>
+      <div class="dropZone">
+        <div class="content_dropZone">
+
+        </div>
+      </div>
+    </section>
+    <!--//END ADD LISTING -->
+    <!--============================= FOOTER =============================-->
+    <footer class="main-block dark-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="copyright">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <p>Copyright &copy; 2021 _____. All rights reserved.</p>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <ul>
+                            <li><a href="#"><span class="ti-facebook"></span></a></li>
+                            <li><a href="#"><span class="ti-twitter-alt"></span></a></li>
+                            <li><a href="#"><span class="ti-instagram"></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--//END FOOTER -->
+
+
+
+
+    <!-- jQuery, Bootstrap JS. -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/add_business.js"></script>
+
+    <script type="text/javascript">
+    var categoria = document.getElementById("inputCategoria");
+    var provincia = document.getElementById("inputProvincia");
+    var telefono = document.getElementById("inputTelefono");
+    var habitaciones = document.getElementById("hotelRooms");
+    var servicios_adicionales = document.getElementById("servicios_adicionales");
+    var btn_agregar = document.getElementById("btn_add");
+
+    function habilitar_input(elemento) {
+      v = elemento.value;
+
+      if (v == "Restaurante") {
+        categoria.disabled = true;
+        provincia.disabled = false;
+        telefono.disabled = false;
+        habitaciones.disabled = true;
+        servicios_adicionales.disabled = true;
+        btn_add.disabled = true;
+
+
+      } else if (v == "Hotel") {
+        categoria.disabled = false;
+        provincia.disabled = false;
+        telefono.disabled = false;
+        habitaciones.disabled = false;
+        servicios_adicionales.disabled = false;
+        btn_add.disabled = false;
+      } else {
+        categoria.disabled = true;
+        provincia.disabled = true;
+        telefono.disabled = true;
+        habitaciones.disabled = true;
+        servicios_adicionales.disabled = true;
+        btn_add.disabled = true;
+      }
+    }
+    </script>
+
+    <!-- <script>
+        $(".map-icon").click(function() {
+            $(".map-fix").toggle();
+        });
+    </script>
+    <script>
+        // Want to customize colors? go to snazzymaps.com
+        function myMap() {
+            var maplat = $('#map').data('lat');
+            var maplon = $('#map').data('lon');
+            var mapzoom = $('#map').data('zoom');
+            // Styles a map in night mode.
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: {
+                    lat: maplat,
+                    lng: maplon
+                },
+                zoom: mapzoom,
+                scrollwheel: false
+            });
+            var marker = new google.maps.Marker({
+                position: {
+                    lat: maplat,
+                    lng: maplon
+                },
+                map: map,
+                title: 'We are here!'
+            });
+        }
+    </script> -->
+    <!-- Map JS (Please change the API key below. Read documentation for more info) -->
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?callback=myMap&key=AIzaSyDMTUkJAmi1ahsx9uCGSgmcSmqDTBF9ygg"></script> -->
+</body>
+
+</html>
