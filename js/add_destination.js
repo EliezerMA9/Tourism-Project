@@ -82,14 +82,17 @@ document.getElementById("send").addEventListener("click", () => {
   };
 
   console.log(jsonToSend);
-  fetch("http://4efd9dcb8422.ngrok.io/destination/register", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    mode: "cors",
-    body: JSON.stringify(jsonToSend),
-  })
+  fetch(
+    "https://authentic-ether-303815.uc.r.appspot.com/destination/register",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      mode: "cors",
+      body: JSON.stringify(jsonToSend),
+    }
+  )
     .then((resp) => resp.json())
     .then((data) => {
       console.log(data);

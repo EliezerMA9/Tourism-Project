@@ -116,7 +116,7 @@ fetch("https://authentic-ether-303815.uc.r.appspot.com/business/showUnverified")
   });
 
 function verifyBusiness(toRemove) {
-  fetch("http://0cbd09cc313f.ngrok.io/business/verify", {
+  fetch("https://authentic-ether-303815.uc.r.appspot.com/business/verify", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

@@ -237,7 +237,7 @@ document.getElementById("saveBtn").addEventListener("click", () => {
 
   let nextForm = `<body>
   <div style="border-style: solid; border-color: aquamarine;">
-      <form action="http://4efd9dcb8422.ngrok.io/business/uploadImages" id="businessImages" method="post" enctype="multipart/form-data">
+      <form action="https://authentic-ether-303815.uc.r.appspot.com/business/uploadImages" id="businessImages" method="post" enctype="multipart/form-data">
           <label for="Elija las imagenes para su negocio">Servicios Adicionales</label>
           <br>
           <input id="filestowait" type="file" name="file" multiple/>
@@ -250,7 +250,7 @@ document.getElementById("saveBtn").addEventListener("click", () => {
 `;
   console.log(jsonToSend);
 
-  fetch("http://4efd9dcb8422.ngrok.io/business/register", {
+  fetch("https://authentic-ether-303815.uc.r.appspot.com/business/register", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
