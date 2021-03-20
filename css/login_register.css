@@ -10,7 +10,7 @@
 }
 
 body {
-    background: linear-gradient(90deg, #47ff33e0,#33C1FF);
+    background: linear-gradient(90deg, #42a4ff, #2082dd);
     padding: 20px;
 }
 
@@ -69,14 +69,14 @@ input[type="submit"] {
     margin-top: 60px;
     color: white;
     border: 0px;
-    background: linear-gradient(90deg, #47ff33e0,#33C1FF);
+    background: linear-gradient(90deg, #47ff33e0, #2ddf19);
     font-weight: 300;
     cursor: pointer;
     font-size: 18px;
 }
 
 input[type="submit"]:hover {
-    background: linear-gradient(90deg,#33C1FF, #47ff33e0);
+    background: linear-gradient(90deg,  #2ddf19, #47ff33e0);
 }
 
 
@@ -111,7 +111,7 @@ input[type="submit"]:hover {
     position: absolute;
     top: 0;
     left: 0;
-    background: linear-gradient(90deg, #33C1FF, #47ff33e0);
+    background: linear-gradient(90deg, #339cff, #47ff33e0);
     opacity: 0.6;
 }
 
