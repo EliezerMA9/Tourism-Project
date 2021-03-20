@@ -1,86 +1,106 @@
 .main-block1 {
-    margin: 10px 30px;
-    border-radius: 10px 10px;
-    display:flex;
-    flex-direction: row;
+  margin: 10px 30px;
+  border-radius: 10px 10px;
+  display:flex;
+  flex-direction: row;
 }
 .form{
-  padding: 30px;
+padding: 30px;
 }
 .form h5{
-  font-family: inherit;
-  font: 20px;
-  font-weight: bold;
-  padding: 10px;
+font-family: inherit;
+font: 20px;
+font-weight: bold;
+padding: 10px;
 }
-.dropZone{
-  border: solid 4px dodgerblue;
-  padding: 30px;
-  width: 50%;
+.lienzoMapa{
+padding: 10px;
+width: 50%;
+display: flex;
+flex-direction: column;
+justify-content: center;
 }
-.content_dropZone{
+#map{
+width: 100%;
+height: 450px;
+}
+.btn_guardar_ubicacion{
+margin-top: 20px;
+}
+.btn_guardar_ubicacion #btn_saveUbicacion{
+width: 100%;
+}
+.hotelService{
+padding: 5px;
 }
 
 .servicios_adi{
-  display: flex;
-  flex-direction: row;
+display: flex;
+flex-direction: row;
 }
 .servicios_adi button{
-  margin-left: 10px;
+margin-left: 10px;
 }
 .servicios_add{
-  width: 50%;
-  height: 200px;
-  background: white;
-  border: solid 1px lightgrey;
-  border-radius: 5px;
+width: 50%;
+height: 200px;
+background: white;
+border: solid 1px lightgrey;
+border-radius: 5px;
 }
 .servicios_add .padre{
-  padding: 10px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+padding: 10px;
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
 }
 .servicios_add .padre .hijo{
-  display: block;
-  padding: 10px;
+display: block;
+padding: 10px;
 }
 .contendor_buscar{
-  margin-top: 0;
-  margin-right: auto;
-  margin-left:auto;
-  width: 100%;
-  height: 110px;
+margin-top: 0;
+margin-right: auto;
+margin-left:auto;
+width: 100%;
+height: 110px;
 }
 .flex_buscar{
-    width: 95%;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    margin: auto;
-    clear: both;
+  width: 95%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin: auto;
+  clear: both;
 }
 .flex_hijo_buscar{
-    padding: 10px;
+  padding: 10px;
 
 }
 .flex_hijo_buscar p{
-    font-weight: 500;
-    font-size: 24px;
+  font-weight: 500;
+  font-size: 24px;
 }
-@media (max-width: 300px) {
-    .flex_buscar{
-        flex-flow: row wrap;
-    }
-    .flex_hijo_buscar p{
-        text-align: center;
-    }
-    .flex_hijo_buscar .form-control{
-        width: 65%;
-    }
-    .flex_hijo_buscar .btn-outline-success{
-        width: 30%;
+@media (max-width: 906px) {
+  .main-block1{
+    display: flex;
+    flex-direction: column;
+  }
+  .lienzoMapa{
+    width: 100%;
+  }
+  .flex_buscar{
+      flex-flow: row wrap;
+  }
+  .flex_hijo_buscar p{
+      text-align: center;
+  }
+  .flex_hijo_buscar .form-control{
+      width: 65%;
+  }
+  .flex_hijo_buscar .btn-outline-success{
+      width: 30%;
 
-    }
+  }
 
 }

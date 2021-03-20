@@ -79,7 +79,7 @@
                 <option>Restaurante</option>
               </select>
           </div>
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-3">
               <label for="inputCategoria">Categoria</label>
               <select id="inputCategoria" class="form-control" disabled>
                 <option selected>Eliga</option>
@@ -91,7 +91,7 @@
               </select>
           </div>
 
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-3">
             <label for="inputProvincia">Provincia</label>
             <select id="inputProvincia" class="form-control" disabled>
             <option selected>Santo Domingo</option>
@@ -128,44 +128,32 @@
         </select>
     </div>
 
-
-
-
-    <div id="descriptionContainer">
-      <input type="text" id="description" placeholder="descripcion">
+    <div class="form-group col-md-2" id="rncContainer">
+      <label for="">RNC</label>
+      <input class="form-control" type="text" id="rnc" placeholder="rnc" disabled>
     </div>
 
-    <div id="rncContainer">
-      <input type="text" id="rnc" placeholder="rnc">
-    </div>
-
-    <div id="conceptContainer">
-      <select id="businessConcept" class="form-control" title="concepto">
-              <option value="" disabled selected></option>
+    <div class="form-group col-md-3" id="conceptContainer">
+      <label for="">Concepto de Negocio</label>
+      <select class="form-control" id="businessConcept" class="form-control" title="concepto" disabled>
+              <option value="" selected></option>
               <option>Comida rapida</option>
               <option>Chino</option>
-              <option>etc</option>
-            </select>
+              <option>Otro</option>
+      </select>
     </div>
-
-    <div id="kindOfEventContainer">
-      <select id="kindOfEvent" class="form-control" title="concepto">
-              <option value="" disabled selected></option>
-              <option>Afuera</option>
-              <option>Arte y cultura</option>
-            </select>
+    <div class="form-group col-md-5" id="descriptionContainer">
+      <label for="">Descripcion Adicinal</label>
+      <input class="form-control" type="text" id="description" placeholder="descripcion" disabled>
     </div>
-
-
-
 
     <div class="form-group col-md-3">
       <label for="inputTelefono">Telefono</label>
       <input type="tel" class="form-control" id="inputTelefono" placeholder="(###) ### ####" disabled>
     </div>
-          <div class="form-group col-md-2">
+          <div class="form-group col-md-3">
               <label for="inputHabitaciones">Habitaciones</label>
-            <input id="hotelRooms" type="number" placeholder="Numero de habitaciones">
+            <input class="form-control" id="hotelRooms" type="number" placeholder="Numero de habitaciones" disabled>
           </div>
           <div class="form-group col-md-4">
             <label for="servicios_adicionales">Servicios Adicionales</label>
@@ -189,22 +177,26 @@
             <button type="button" class="btn btn-info" id="btn_add">Agregar</button>
             </div>
            </div>
+
            <div class="services_container" id="servicios_add">
             </div>
         </div>
       </form>
-      
+
       <button id="saveBtn" class="btn btn-success">Guardar</button>
       </div>
-      <div class="dropZone">
-        <div class="content_dropZone">
 
+      <div class="lienzoMapa">
+        <div id="map"></div>
+        <div class="btn_guardar_ubicacion">
+          <button class="btn btn-success" id="btn_saveUbicacion">Guardar Ubicacion</button>
         </div>
       </div>
+
     </section>
     <!--//END ADD LISTING -->
     <!--============================= FOOTER =============================-->
-    <footer class="main-block dark-bg">
+    <footer class="main-block dark-bg" >
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -222,6 +214,7 @@
             </div>
         </div>
     </footer>
+    <body id="htmlEnd" ></body>
     <!--//END FOOTER -->
 
 
@@ -235,75 +228,10 @@
     <script src="js/add_business.js"></script>
 
     <script type="text/javascript">
-    var categoria = document.getElementById("inputCategoria");
-    var provincia = document.getElementById("inputProvincia");
-    var telefono = document.getElementById("inputTelefono");
-    var habitaciones = document.getElementById("hotelRooms");
-    var servicios_adicionales = document.getElementById("servicios_adicionales");
-    var btn_agregar = document.getElementById("btn_add");
-
-    function habilitar_input(elemento) {
-      v = elemento.value;
-
-      if (v == "Restaurante") {
-        categoria.disabled = true;
-        provincia.disabled = false;
-        telefono.disabled = false;
-        habitaciones.disabled = true;
-        servicios_adicionales.disabled = true;
-        btn_add.disabled = true;
-
-
-      } else if (v == "Hotel") {
-        categoria.disabled = false;
-        provincia.disabled = false;
-        telefono.disabled = false;
-        habitaciones.disabled = false;
-        servicios_adicionales.disabled = false;
-        btn_add.disabled = false;
-      } else {
-        categoria.disabled = true;
-        provincia.disabled = true;
-        telefono.disabled = true;
-        habitaciones.disabled = true;
-        servicios_adicionales.disabled = true;
-        btn_add.disabled = true;
-      }
-    }
+    
     </script>
 
-    <!-- <script>
-        $(".map-icon").click(function() {
-            $(".map-fix").toggle();
-        });
-    </script>
-    <script>
-        // Want to customize colors? go to snazzymaps.com
-        function myMap() {
-            var maplat = $('#map').data('lat');
-            var maplon = $('#map').data('lon');
-            var mapzoom = $('#map').data('zoom');
-            // Styles a map in night mode.
-            var map = new google.maps.Map(document.getElementById('map'), {
-                center: {
-                    lat: maplat,
-                    lng: maplon
-                },
-                zoom: mapzoom,
-                scrollwheel: false
-            });
-            var marker = new google.maps.Marker({
-                position: {
-                    lat: maplat,
-                    lng: maplon
-                },
-                map: map,
-                title: 'We are here!'
-            });
-        }
-    </script> -->
-    <!-- Map JS (Please change the API key below. Read documentation for more info) -->
-    <!-- <script src="https://maps.googleapis.com/maps/api/js?callback=myMap&key=AIzaSyDMTUkJAmi1ahsx9uCGSgmcSmqDTBF9ygg"></script> -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBduegwAEURuLnKpbqOhnD61av0jYKQSAY&callback=initMap&libraries=&v=weekly"></script>
 </body>
 
 </html>
