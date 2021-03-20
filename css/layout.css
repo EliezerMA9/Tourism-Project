@@ -13,12 +13,25 @@
   font-weight: bold;
   padding: 10px;
 }
-.dropZone{
-  border: solid 4px dodgerblue;
-  padding: 30px;
+.lienzoMapa{
+  padding: 10px;
   width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.content_dropZone{
+#map{
+  width: 100%;
+  height: 450px;
+}
+.btn_guardar_ubicacion{
+  margin-top: 20px;
+}
+.btn_guardar_ubicacion #btn_saveUbicacion{
+  width: 100%;
+}
+.hotelService{
+  padding: 5px;
 }
 
 .servicios_adi{
@@ -68,7 +81,14 @@
     font-weight: 500;
     font-size: 24px;
 }
-@media (max-width: 300px) {
+@media (max-width: 906px) {
+    .main-block1{
+      display: flex;
+      flex-direction: column;
+    }
+    .lienzoMapa{
+      width: 100%;
+    }
     .flex_buscar{
         flex-flow: row wrap;
     }

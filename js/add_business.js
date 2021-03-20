@@ -86,13 +86,13 @@ document.getElementById("saveBtn").addEventListener("click", () => {
   console.log(jsonToSend);
 
   fetch("https://authentic-ether-303815.uc.r.appspot.com/business/register", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    mode: "cors",
-    body: JSON.stringify(jsonToSend),
-  })
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      mode: "cors",
+      body: JSON.stringify(jsonToSend),
+    })
     .then((resp) => resp.json())
     .then((data) => {
       console.log(data);
