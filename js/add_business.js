@@ -113,7 +113,20 @@ var description = document.getElementById("description");
 function habilitar_input(elemento) {
   v = elemento.value;
 
-  if (v == "Restaurante") {
+  if (v == "Hotel") {
+
+    categoria.disabled = false;
+    provincia.disabled = false;
+    telefono.disabled = false;
+    habitaciones.disabled = false;
+    servicios_adicionales.disabled = false;
+    description.disabled = false;
+    btn_add.disabled = false;
+    rnc.disabled = false;
+    businessConcept.disabled = true;
+
+  } else if (v == "Restaurante") {
+
     categoria.disabled = true;
     provincia.disabled = false;
     telefono.disabled = false;
@@ -125,16 +138,7 @@ function habilitar_input(elemento) {
     rnc.disabled = false;
     description.disabled = false;
 
-  } else if (v == "Hotel") {
-    categoria.disabled = false;
-    provincia.disabled = false;
-    telefono.disabled = false;
-    habitaciones.disabled = false;
-    servicios_adicionales.disabled = false;
-    description.disabled = false;
-    btn_add.disabled = false;
-    rnc.disabled = false;
-    businessConcept.disabled = true;
+
   } else {
     categoria.disabled = true;
     provincia.disabled = true;
