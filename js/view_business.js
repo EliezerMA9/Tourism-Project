@@ -1,4 +1,4 @@
-fetch("https://authentic-ether-303815.uc.r.appspot.com/business/showUnverified")
+fetch("https://authentic-ether-303815.uc.r.appspot.com/business/showVerified")
   .then((response) => response.json())
   .then(function (data) {
     console.log(data);
@@ -19,10 +19,6 @@ fetch("https://authentic-ether-303815.uc.r.appspot.com/business/showUnverified")
         tempstrtoreplace.length
       );
       console.log({ firstImage, secondImage, thirdImage });
-      /* for (let a = 0; a < tempstrtoreplace.length; a++) {
-        fIndex = tempstrtoreplace.indexOf(" ");
-        console.log(fIndex);
-      } */
 
       if (data[i].TypeOf == "Hotel") {
         container.innerHTML += `<div id="${data[i].Rnc}">
@@ -43,43 +39,21 @@ fetch("https://authentic-ether-303815.uc.r.appspot.com/business/showUnverified")
           <img src="${thirdImage}" class="businessImage" > </p>
         </div>`;
       } else {
-        container.innerHTML +=
-          `<div id="` +
-          data[i].Rnc +
-          `">` +
-          `<p>` +
-          data[i].TypeOf +
-          `</p>` +
-          `<p> Nombre: ` +
-          data[i].Name +
-          `</p>` +
-          `<p> Dueño: ` +
-          data[i].idOwner +
-          `</p>` +
-          `<p> Rnc: ` +
-          data[i].Rnc +
-          `</p>` +
-          `<p> Descripcion: ` +
-          data[i].Description +
-          `</p>` +
-          `<p> Provincia: ` +
-          data[i].Province +
-          `</p>` +
-          `<p> Telefono: ` +
-          data[i].PhoneNumber +
-          `</p>` +
-          `<p> Categoria: ` +
-          data[i].Stars +
-          `</p>` +
-          `<p> Afuera, etc: ` +
-          data[i].KindOfEvent +
-          `</p>` +
-          `<p> Images: ` +
-          data[i].Image +
-          `</p>` +
-          `<button class="` +
-          data[i].Rnc +
-          `"onclick="verifyBusiness(this.className)">Verificar</button> </div>`;
+        container.innerHTML += `<div id="${data[i].Rnc}">
+            <p>${data[i].TypeOf} </p>
+            <p>Nombre:${data[i].Name} </p>
+            <p> Dueño:${data[i].idOwner} </p>
+            <p> Rnc:${data[i].Rnc}</p>
+            <p> Descripcion:${data[i].Description} </p>
+            <p> Provincia: ${data[i].Province} </p>
+            <p> Telefono:${data[i].PhoneNumber} </p>
+            <p> Categoria:${data[i].Stars} </p>
+            <p> Afuera, etc:${data[i].KindOfEvent}</p>
+            <p>Images: 
+            <img src="${firstImage}" class="businessImage" >
+            <img src="${secondImage}" class="businessImage" >
+            <img src="${thirdImage}" class="businessImage" > </p>
+        </div>`;
       }
 
       document.getElementById(data[i].Rnc).style.marginBottom = "50px";
