@@ -1472,3 +1472,8 @@ label:hover~label {
 input[type="radio"]:checked~label {
     color: orange;
 }
+
+.businessImage {
+    height: 200px;
+    width: 200px;
+}
