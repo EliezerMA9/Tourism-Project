@@ -98,3 +98,49 @@ document.getElementById("saveBtn").addEventListener("click", () => {
       console.log(data);
     });
 });
+
+var categoria = document.getElementById("inputCategoria");
+var provincia = document.getElementById("inputProvincia");
+var telefono = document.getElementById("inputTelefono");
+var habitaciones = document.getElementById("hotelRooms");
+var servicios_adicionales = document.getElementById("servicios_adicionales");
+var btn_agregar = document.getElementById("btn_add");
+var businessConcept = document.getElementById("businessConcept");
+var tipo_actividades = document.getElementById("kindOfEvent");
+var rnc = document.getElementById("rnc");
+var description = document.getElementById("description");
+
+function habilitar_input(elemento) {
+  v = elemento.value;
+
+  if (v == "Restaurante") {
+    categoria.disabled = true;
+    provincia.disabled = false;
+    telefono.disabled = false;
+    habitaciones.disabled = true;
+    servicios_adicionales.disabled = true;
+    btn_add.disabled = true;
+    businessConcept.disabled = false;
+    tipo_actividades.disabled = true;
+    rnc.disabled = false;
+    description.disabled = false;
+
+  } else if (v == "Hotel") {
+    categoria.disabled = false;
+    provincia.disabled = false;
+    telefono.disabled = false;
+    habitaciones.disabled = false;
+    servicios_adicionales.disabled = false;
+    description.disabled = false;
+    btn_add.disabled = false;
+    rnc.disabled = false;
+    businessConcept.disabled = true;
+  } else {
+    categoria.disabled = true;
+    provincia.disabled = true;
+    telefono.disabled = true;
+    habitaciones.disabled = true;
+    servicios_adicionales.disabled = true;
+    btn_add.disabled = true;
+  }
+}
