@@ -1,3 +1,5 @@
+// Variables
+
 var categoria = document.getElementById("inputCategoria");
 var provincia = document.getElementById("inputProvincia");
 var telefono = document.getElementById("inputTelefono");
