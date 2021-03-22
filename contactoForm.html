@@ -63,138 +63,44 @@
       <div class="title">
       </div>
       <div class="form">
-        <h5>Agregar Sitio Turistico</h5>
+        <h5>Formulario Contacto</h5>
         <hr>
         <form>
           <div class="form-row">
             <div class="form-group col-md-5">
               <label for="inputName_Sitio">Nombre</label>
-              <input type="text" class="form-control" id="inputName_Sitio" placeholder="Nombre del Sitio o la Actividad">
+              <input type="text" class="form-control" id="inputName_Sitio" placeholder="Nombre completo">
             </div>
-            <div class="form-group col-md-3">
+
+            <div class="form-group col-md-5">
+              <label for="inputName_Sitio">Email</label>
+              <input type="text" class="form-control" id="inputName_Sitio" placeholder="Direccion de Email">
+            </div>
+
+            <div class="form-group col-md-5">
+              <label for="inputName_Sitio">Asunto</label>
+              <input type="text" class="form-control" id="inputName_Sitio" placeholder="Asunto del mensaje">
+            </div>
+
+
+            <!-- <div class="form-group col-md-3">
               <label for="inputSitio">Tipo</label>
               <select id="inputSitio" class="form-control" onchange="habilitar_input(this);">
                 <option selected>...</option>
                 <option>Sitio Turistico</option>
                 <option>Actividad Turistica</option>
               </select>
-          </div>
-            <!-- <div class="form-group col-md-4">
-              <label for="inputCategoria">Categoria</label>
-              <select id="inputCategoria" class="form-control" disabled>
-                <option selected>Eliga</option>
-                <option id="option1">1 Estrella (Economico)</option>
-                <option id="option2">2 Estrella (Valor)</option>
-                <option id="option3">3 Estrella (Calidad)</option>
-                <option id="option4">4 Estrella (Superior)</option>
-                <option id="option5">5 Estrella (Excepcional)</option>
-              </select>
           </div> -->
 
-            <div class="form-group col-md-3">
-            <label for="inputProvincia">Provincia</label>
-            <select id="inputProvincia" class="form-control" disabled>
-            <option selected>Santo Domingo</option>
-            <option>Distrito Nacional</option>
-            <option>Santiago</option>
-            <option>San Cristóbal</option>
-            <option>La Vega</option>
-            <option>Puerto Plata</option>
-            <option>San Pedro de Macorís</option>
-            <option>Duarte</option>
-            <option>La Altagracia</option>
-            <option>La Romana</option>
-            <option>San Juan</option>
-            <option>Espaillat</option>
-            <option>Azua</option>
-            <option>Barahona</option>
-            <option>Monte Plata</option>
-            <option>Peravia</option>
-            <option>Monseñor Nouel</option>
-            <option>Valverde</option>
-            <option>Sánchez Ramírez</option>
-            <option>María Trinidad Sánchez</option>
-            <option>Montecristi</option>
-            <option>Samaná</option>
-            <option>Bahoruco</option>
-            <option>Hermanas Mirabal</option>
-            <option>El Seibo</option>
-            <option>Hato Mayor</option>
-            <option>Dajabón</option>
-            <option>Elías Piña</option>
-            <option>San José de Ocoa</option>
-            <option>Santiago Rodríguez</option>
-            <option>Independencia</option>
-            <option>Pedernales</option>
-        </select>
-    </div>
-    <div class="form-group col-md-2">
-      <label for="inputPrecio">Precio</label>
-      <input type="text" class="form-control" id="inputPrecio" placeholder="Precio por persona" disabled>
-    </div>
-    <div class="form-group col-md-3">
-      <label for="inputFechas">Fecha</label> <!-- col-sm-4 col-lg-4  -->
-      <input type="date" id="inputFecha" name="fecha" class="form-control" disabled>
-        
-    </div>
-
-    <div class="form-group col-md-3">
-      <label >Hora</label>
-      <input type="time" id="inputHora" name="hora" class="form-control" disabled>
-     
-  </div>
-          <div class="form-group col-md-2">
-              <label for="inputCupos">Cupos</label>
-            <select id="inputCupos" class="form-control" disabled>
-              <option selected>5 - 10</option>
-              <option>10 - 15</option>
-              <option>15 - 20</option>
-              <option>20 - 25</option>
-              <option>25 - 30</option>
-              
-            </select>
-          </div>
-          <!-- <div class="form-group col-md-4">
-            <label for="servicios_adicionales">Servicios Adicionales</label>
-            <div class="servicios_adi">
-            <select id="servicios_adicionales" class="form-control"
-             title="Debe ir seleccionado una a la vez"
-             disabled>
-              <option> ... </option>
-              <option>Minibar</option>
-              <option>Piscinas</option>
-              <option>Saunas</option>
-              <option>Wi-Fi</option>
-              <option>Servicio de TV</option>
-              <option>Tiendas</option>
-              <option>Peluqueria</option>
-              <option>Guias Turisticas</option>
-              <option>Gimnasio</option>
-              <option>Sala Fitness</option>
-              <option>Salas de Eventos</option>
-            </select>
-            <button type="button" class="btn btn-info" id="btn_add"
-            onclick="ShowSelected();" disabled>Agregar</button>
-            </div>
-           </div> -->
-           <!-- <div class="servicios_add">
-             <div class="padre">
-               <div class="hijo">
-                 <p id="resultado"></p>
-               </div>
-            </div>
-
-             </div> -->
-
              <div class="form-group col-md-7">
-                <label for="inputDescripcion" >Descripcion</label>
-                <textarea class="form-control" placeholder="Describe detalladamente la atraccion turistica a publicar" id="inputDescripcion" rows="7" disabled></textarea>
+                <label for="inputDescripcion" >Mensaje</label>
+                <textarea class="form-control" placeholder="Escribe aqui el mensaje a enviar" id="inputDescripcion" rows="7" disabled></textarea>
             </div>
             
             
            </div>
            <div>
-            <button type="submit" class="btn btn-success" id="btn_add" disabled>Guardar</button>
+            <button type="submit" class="btn btn-success" id="btn_add" disabled>Enviar</button>
         </div>
         </div>
 
