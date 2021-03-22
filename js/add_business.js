@@ -50,17 +50,17 @@ var latitude = "";
 var longitude = "";
 
 //Funcion principal
-initMap = function () {
+initMap = function() {
   //usamos la API para geolocalizar el usuario
   navigator.geolocation.getCurrentPosition(
-    function (position) {
+    function(position) {
       coords = {
         lng: position.coords.longitude,
         lat: position.coords.latitude,
       };
       setMapa(coords); //pasamos las coordenadas al metodo para crear el mapa
     },
-    function (error) {
+    function(error) {
       console.log(error);
     }
   );
@@ -94,7 +94,7 @@ function setMapa(coords) {
   //cuando el usuario a soltado el marcador
   marker.addListener("click", toggleBounce);
 
-  marker.addListener("dragend", function (event) {
+  marker.addListener("dragend", function(event) {
     latitude = this.getPosition().lat();
     longitude = this.getPosition().lng();
   });
@@ -113,10 +113,9 @@ var btn_saveUbicacion = document.getElementById("btn_saveUbicacion");
 btn_saveUbicacion.addEventListener("click", (e) => {
   e.preventDefault();
 
-  (async () => {
+  (async() => {
     const rawResponse = await fetch(
-      "http://0cbd09cc313f.ngrok.io/business/testlocation",
-      {
+      "http://0cbd09cc313f.ngrok.io/business/testlocation", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -235,32 +234,43 @@ document.getElementById("saveBtn").addEventListener("click", () => {
     };
   }
 
-  let nextForm = `<body>
-  <div style="border-style: solid; border-color: aquamarine;">
-      <form action="https://authentic-ether-303815.uc.r.appspot.com/business/uploadImages" id="businessImages" method="post" enctype="multipart/form-data">
-          <label for="Elija las imagenes para su negocio">Servicios Adicionales</label>
-          <br>
-          <input id="filestowait" type="file" name="file" multiple/>
-          <br>
-          <br>
-          <button id="send">Enviar</button>
-          <input id="rnc" name="rnc" value="${businessRnc}" style="visibility: hidden;">
-        </form>
-  </div>
-`;
+  // let nextForm =
+  //   `<body>
+  //   <div style="border-style: solid; border-color: aquamarine;">
+  //       <form action="https://authentic-ether-303815.uc.r.appspot.com/business/uploadImages" id="businessImages" method="post" enctype="multipart/form-data">
+  //           <label for="Elija las imagenes para su negocio">Servicios Adicionales</label>
+  //           <br>
+  //           <input id="filestowait" type="file" name="file" multiple/>
+  //           <br>
+  //           <br>
+  //           <button id="send">Enviar</button>
+  //           <input id="rnc" name="rnc" value="${businessRnc}" style="visibility: hidden;">
+  //         </form>
+  //   </div>
+  // `;
+
+  // var rnc = businessRnc;
+  //
+  // v_rnc() {
+  //   let input = document.getElementById("v_rnc");
+  //   input.value = rnc;
+  // }
+
   console.log(jsonToSend);
 
   fetch("https://authentic-ether-303815.uc.r.appspot.com/business/register", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    mode: "cors",
-    body: JSON.stringify(jsonToSend),
-  })
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      mode: "cors",
+      body: JSON.stringify(jsonToSend),
+    })
     .then((resp) => resp.json())
     .then((data) => {
       console.log(data);
-      document.getElementById("htmlEnd").innerHTML = nextForm;
+
+      v_rnc();
+      // document.getElementById("htmlEnd").innerHTML = nextForm;
     });
 });
