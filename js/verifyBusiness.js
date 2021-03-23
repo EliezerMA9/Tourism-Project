@@ -29,7 +29,7 @@ fetch("https://authentic-ether-303815.uc.r.appspot.com/business/showUnverified")
   .then(function (data) {
     console.log(data);
     for (let i = 0; i < data.length; i++) {
-      tempstrtoreplace = data[i].Image.replaceAll(",", "|");
+      /* tempstrtoreplace = data[i].Image.replaceAll(",", "|");
       fIndex = tempstrtoreplace.indexOf("|");
       firstImage = tempstrtoreplace.slice(1, fIndex);
       secondImage = tempstrtoreplace.slice(
@@ -44,7 +44,8 @@ fetch("https://authentic-ether-303815.uc.r.appspot.com/business/showUnverified")
         secondImage.length + secondImage.length + 3,
         tempstrtoreplace.length
       );
-      console.log({ firstImage, secondImage, thirdImage });
+      console.log({ firstImage, secondImage, thirdImage }); */
+
       /* for (let a = 0; a < tempstrtoreplace.length; a++) {
         fIndex = tempstrtoreplace.indexOf(" ");
         console.log(fIndex);
