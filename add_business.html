@@ -183,8 +183,41 @@
         </div>
       </form>
 
-      <button id="saveBtn" class="btn btn-success">Guardar</button>
+      <button id="saveBtn" class="btn btn-success" data-toggle="modal" data-target=".bd-example-modal-lg">Guardar</button>
+      <!--Boton Modal ----------------------------->
+      <button type="button" class="btn btn-info" data-toggle="modal" data-target=".bd-example-modal-lg">
+        Agregar Imagenes
+      </button>
+      <!-- Modal ------------------------------->
+      <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Subir imagenes</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form action="https://authentic-ether-303815.uc.r.appspot.com/business/uploadImages" id="businessImages" method="post" enctype="multipart/form-data">
+
+              <div class="form-group">
+                <label for="Elija las imagenes para su negocio">Elija las imagenes para su negocio</label>
+                <input id="filestowait" type="file" name="file" multiple class="form-control-file">
+                <button class="btn btn-primary" id="send">Enviar</button>
+                <input id="v_rnc" name="rnc" style="">
+              </div>
+
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
       </div>
+    </div>
 
       <div class="lienzoMapa">
         <div id="map"></div>
