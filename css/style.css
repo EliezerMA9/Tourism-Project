@@ -1429,6 +1429,42 @@ footer {
         height: auto;
     }
 }
+/* FOOTER */
+.main-block_footer{
+  height: 60px;
+}
+
+.footer{
+}
+
+.copyright{
+  width: 100%;
+  padding : 15px;
+  display: block;
+}
+.copyright p{
+  margin: 0;
+  padding: 0;
+  float: left;
+}
+.copyright ul{
+  margin: 0;
+  padding: 0;
+  float:  right;
+}
+@media (max-width: 500px) {
+  .main-block_footer{
+    height: 100px;
+  }
+
+  .copyright{
+
+    display: flex;
+    flex-direction: column;
+
+  }
+}
+
 
 /* COMENTARIO */
 

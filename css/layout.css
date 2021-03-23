@@ -104,3 +104,44 @@ height: 110px;
   }
 
 }
+.navbar{
+  padding: 10px;
+}
+/* VIEW_BUSINESS */
+
+.container{
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.card_business{
+  background-color: white;
+  width: 30%;
+  padding: 10px;
+  border-radius: 10px;
+}
+.card_business p{
+  font-size: 16px;
+}
+.card_business img{
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  padding: 5px;
+  position: inherit;
+  /* transition: width .2s, height .3s; */
+  cursor: zoom-in;
+}
+.card_business img:hover{
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border: solid 1px lightgray;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
+}
