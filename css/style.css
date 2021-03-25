@@ -84,7 +84,9 @@ p {
 .light-bg {
     background: #f3f4f7;
 }
-
+.e{
+  flex-wrap:
+}
 .dark-bg {
     background: #252a33;
 }

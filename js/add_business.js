@@ -71,7 +71,7 @@ initMap = function() {
 function setMapa(coords) {
   //Se crea una nueva instancia del objeto mapa
   var map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 13,
+    zoom: 7,
     center: new google.maps.LatLng(coords.lat, coords.lng),
   });
 
@@ -123,6 +123,7 @@ btn_saveUbicacion.addEventListener("click", (e) => {
           "Content-Type": "application/json",
           Accept: "application/json",
         },
+
         body: JSON.stringify({
           coordN: latitude, // Variable universal con la coordenada de LATITUD
           coordW: longitude, // Variable universal con la coordenada de LONGITUD
@@ -144,7 +145,7 @@ document.getElementById("btn_add").addEventListener("click", () => {
   let combo = document.getElementById("servicios_adicionales");
   let selected = combo.options[combo.selectedIndex].text;
   if (selected == "") {
-    console.log("ola");
+    console.log("hola");
   } else {
     parent.innerHTML +=
       `<div id="` +
@@ -236,27 +237,22 @@ document.getElementById("saveBtn").addEventListener("click", () => {
     };
   }
 
-  // let nextForm =
-  //   `<body>
-  //   <div style="border-style: solid; border-color: aquamarine;">
-  //       <form action="https://authentic-ether-303815.uc.r.appspot.com/business/uploadImages" id="businessImages" method="post" enctype="multipart/form-data">
-  //           <label for="Elija las imagenes para su negocio">Servicios Adicionales</label>
-  //           <br>
-  //           <input id="filestowait" type="file" name="file" multiple/>
-  //           <br>
-  //           <br>
-  //           <button id="send">Enviar</button>
-  //           <input id="rnc" name="rnc" value="${businessRnc}" style="visibility: hidden;">
-  //         </form>
-  //   </div>
-  // `;
+  let nextForm =
+    `<body>
+    <div style="border-style: solid; border-color: aquamarine;">
+        <form action="https://authentic-ether-303815.uc.r.appspot.com/business/uploadImages" id="businessImages" method="post" enctype="multipart/form-data">
+            <label for="Elija las imagenes para su negocio">Servicios Adicionales</label>
+            <br>
+            <input id="filestowait" type="file" name="file" multiple/>
+            <br>
+            <br>
+            <button id="send">Enviar</button>
+            <input id="rnc" name="rnc" value="${businessRnc}" style="visibility: hidden;">
+          </form>
+    </div>
+  `;
 
-  // var rnc = businessRnc;
-  //
-  // v_rnc() {
-  //   let input = document.getElementById("v_rnc");
-  //   input.value = rnc;
-  // }
+
 
   console.log(jsonToSend);
 
@@ -272,7 +268,6 @@ document.getElementById("saveBtn").addEventListener("click", () => {
     .then((data) => {
       console.log(data);
 
-      v_rnc();
-      // document.getElementById("htmlEnd").innerHTML = nextForm;
+      document.getElementById("htmlEnd").innerHTML = nextForm;
     });
 });

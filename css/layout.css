@@ -4,6 +4,13 @@
   display:flex;
   flex-direction: row;
 }
+.main-block2 {
+  margin: 10px 30px;
+  border-radius: 10px 10px;
+}
+.add_img{
+  width:80%;
+}
 .form{
 padding: 30px;
 }
@@ -33,7 +40,11 @@ width: 100%;
 .hotelService{
 padding: 5px;
 }
-
+.destdescripcion{
+  outline: none;
+   border: solid 1px lightgrey;
+   border-radius: 5px;
+ }
 .servicios_adi{
 display: flex;
 flex-direction: row;
