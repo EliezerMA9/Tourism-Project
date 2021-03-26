@@ -83,10 +83,46 @@
       <hr>
       <form>
         <div class="form-row">
-          <div class="form-group col-md-8">
+          <div class="form-group col-md-6">
             <label for="nombre">Nombre</label>
             <input class="form-control" type="text" name="fname" id="destname" placeholder="Nombre de Sitio Turistico">
           </div>
+          <div class="form-group col-md-6">
+          <label for="inputProvincia">Provincia</label>
+          <select id="inputProvincia" class="form-control">
+          <option selected>Santo Domingo</option>
+          <option>Santiago</option>
+          <option>San Cristóbal</option>
+          <option>La Vega</option>
+          <option>Puerto Plata</option>
+          <option>San Pedro de Macorís</option>
+          <option>Duarte</option>
+          <option>La Altagracia</option>
+          <option>La Romana</option>
+          <option>San Juan</option>
+          <option>Espaillat</option>
+          <option>Azua</option>
+          <option>Barahona</option>
+          <option>Monte Plata</option>
+          <option>Peravia</option>
+          <option>Monseñor Nouel</option>
+          <option>Valverde</option>
+          <option>Sánchez Ramírez</option>
+          <option>María Trinidad Sánchez</option>
+          <option>Montecristi</option>
+          <option>Samaná</option>
+          <option>Bahoruco</option>
+          <option>Hermanas Mirabal</option>
+          <option>El Seibo</option>
+          <option>Hato Mayor</option>
+          <option>Dajabón</option>
+          <option>Elías Piña</option>
+          <option>San José de Ocoa</option>
+          <option>Santiago Rodríguez</option>
+          <option>Independencia</option>
+          <option>Pedernales</option>
+      </select>
+  </div>
 
           <!-- <div class="form-group col-md-7">
             <label for="servicios_adicionales">Dias Laborables (Uno a la vez)</label>
@@ -113,18 +149,23 @@
 
           </form>
         </div>
+        <div class="alert alert-danger" role="alert">
+          <b>Nota: </b>Recuerde seleccionar su ubicacion antes de
+          <b><i>Guardar los Datos</i></b>.
+        </div>
+
         <button class="btn btn-primary" id="send">Guardar</button>
 
       </div>
 
       <div class="lienzoMapa">
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
         <b>Advertencia:</b> Debe permitir el acceso a la ubicacion para ver el <b>Mapa</b>.
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="alert alert-success" role="alert">
+      <div class="alert" role="alert">
       <h4 class="alert-heading">Como funciona?!</h4>
       <p>Arraste el marcador rojo a la ubicacion deseada. La ubicacion se aguardara automaticamente.</p>
       <hr>
