@@ -187,6 +187,18 @@
       </div>
 
       <div class="lienzoMapa">
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <b>Advertencia:</b> Debe permitir el acceso a la ubicacion para ver el <b>Mapa</b>.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="alert alert-success" role="alert">
+      <h4 class="alert-heading">Como funciona?!</h4>
+      <p>Arraste el marcador rojo a la ubicacion deseada. Luego pulse el boton <b>Guardar Ubicacion</b>.</p>
+      <hr>
+      <p class="mb-0"><b>Nota: </b>El marcador tendra su ubicacion actual como posicion inicial.</p>
+    </div>
         <div id="map"></div>
         <div class="btn_guardar_ubicacion">
           <button class="btn btn-success" id="btn_saveUbicacion">Guardar Ubicacion</button>
@@ -225,9 +237,6 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/add_business.js"></script>
 
-    <script type="text/javascript">
-
-    </script>
 
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBduegwAEURuLnKpbqOhnD61av0jYKQSAY&callback=initMap&libraries=&v=weekly"></script>
 </body>
