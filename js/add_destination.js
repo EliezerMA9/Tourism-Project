@@ -99,11 +99,13 @@ function toggleBounce() {
 document.getElementById("send").addEventListener("click", () => {
   let destname = document.getElementById("destname").value;
   let destdescripcion = document.getElementById("destdescripcion").value;
+  let inputProvincia = document.getSelectedOption("inputProvincia");
 
   let jsonToSend = {
     name: destname,
     coordN: coordsN,
     coordW: coordsW,
+    province: inputProvincia,
     description: destdescripcion,
   };
 
