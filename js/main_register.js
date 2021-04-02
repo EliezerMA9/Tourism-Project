@@ -17,6 +17,7 @@ formRegister.addEventListener("submit", (e) => {
     {
       mode: "cors",
       method: "POST",
+      credentials: "same-origin",
     }
   )
     .then((resp) => resp.json())

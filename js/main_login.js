@@ -1,13 +1,22 @@
 //Variables
+console.log(location.origin);
 var formLogin = document.getElementById("formlogin");
+console.log(document.getElementById("test"));
 
-fetch(`https://finalproject-309315.uc.r.appspot.com/user/login`, {
-  method: "GET",
-})
-  .then((resp) => resp.json())
-  .then((data) => {
-    console.log(data);
-  });
+document.getElementById("test").addEventListener("click", (e) => {
+  e.preventDefault();
+  console.log("a");
+
+  fetch(`https://finalproject-309315.uc.r.appspot.com/user/login`, {
+    credentials: "same-origin",
+    method: "GET",
+    mode: "cors",
+  })
+    .then((resp) => resp.json())
+    .then((data) => {
+      console.log(data);
+    });
+});
 
 //Event Listeners
 formLogin.addEventListener("submit", (e) => {
@@ -21,13 +30,12 @@ formLogin.addEventListener("submit", (e) => {
   fetch(
     `https://finalproject-309315.uc.r.appspot.com/user/login?&email=${jsontosend.email}&password=${jsontosend.password}`,
     {
+      credentials: "same-origin",
       mode: "cors",
       method: "POST",
     }
-  )
-    .then((resp) => resp.json())
-    .then((data) => {
-      console.log(data);
-    });
+  ).then((data) => {
+    console.log(data);
+  });
 });
 //
