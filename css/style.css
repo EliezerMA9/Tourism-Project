@@ -84,9 +84,9 @@ p {
 .light-bg {
     background: #f3f4f7;
 }
-.e{
+/* .e{
   flex-wrap:
-}
+} */
 .dark-bg {
     background: #252a33;
 }
@@ -739,6 +739,7 @@ p {
    ============================================================== */
 footer {
     position: relative;
+    bottom: 0;
 }
 
 .copyright {
@@ -1436,8 +1437,7 @@ footer {
   height: 60px;
 }
 
-.footer{
-}
+
 
 .copyright{
   width: 100%;
@@ -1514,4 +1514,27 @@ input[type="radio"]:checked~label {
 .businessImage {
     height: 200px;
     width: 200px;
+}
+
+#cardContainer{
+    margin: auto;
+    margin-top: 50px;
+    
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+    align-content: center;
+}
+
+#verifyContainer{
+    margin: 10px;
+    border-radius: 10px;
+
+    width: 400px;
+    
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
 }
