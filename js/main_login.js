@@ -1,7 +1,7 @@
 //Variables
 var formLogin = document.getElementById("formlogin");
 
-fetch(`http://e927a3b4e5f2.ngrok.io/user/login`, {
+fetch(`https://finalproject-309315.uc.r.appspot.com/user/login`, {
   method: "GET",
 })
   .then((resp) => resp.json())
@@ -19,7 +19,7 @@ formLogin.addEventListener("submit", (e) => {
   };
 
   fetch(
-    `http://e927a3b4e5f2.ngrok.io/user/login?&email=${jsontosend.email}&password=${jsontosend.password}`,
+    `https://finalproject-309315.uc.r.appspot.com/user/login?&email=${jsontosend.email}&password=${jsontosend.password}`,
     {
       mode: "cors",
       method: "POST",

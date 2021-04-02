@@ -13,7 +13,7 @@ formRegister.addEventListener("submit", (e) => {
   };
 
   fetch(
-    `http://e927a3b4e5f2.ngrok.io/user/register?name=${jsontosend.name}&email=${jsontosend.email}&password=${jsontosend.password}`,
+    `https://finalproject-309315.uc.r.appspot.com/user/register?name=${jsontosend.name}&email=${jsontosend.email}&password=${jsontosend.password}`,
     {
       mode: "cors",
       method: "POST",
