@@ -1,22 +1,33 @@
 //Variables
-var formLogin = document.getElementById('formlogin');
+var formLogin = document.getElementById("formlogin");
+
+fetch(`http://e927a3b4e5f2.ngrok.io/user/login`, {
+  method: "GET",
+})
+  .then((resp) => resp.json())
+  .then((data) => {
+    console.log(data);
+  });
 
 //Event Listeners
-formLogin.addEventListener('submit', (e) => {
-    e.preventDefault();
+formLogin.addEventListener("submit", (e) => {
+  e.preventDefault();
 
-    var datosForm = new FormData(formLogin);
-    // console.log(datosForm);
-    // console.log(datosForm.get('usuario'));
-    // console.log(datosForm.get('pass'));
+  let jsontosend = {
+    email: document.getElementById("email").value,
+    password: document.getElementById("pass").value,
+  };
 
-    fetch('https://authentic-ether-303815.uc.r.appspot.com/user/login', {
-        method: "POST",
-        body: datosForm
-      })
-      .then(resp => resp.json())
-      .then(data => {
-        console.log(data);
-      })
-  })
-  //
+  fetch(
+    `http://e927a3b4e5f2.ngrok.io/user/login?&email=${jsontosend.email}&password=${jsontosend.password}`,
+    {
+      mode: "cors",
+      method: "POST",
+    }
+  )
+    .then((resp) => resp.json())
+    .then((data) => {
+      console.log(data);
+    });
+});
+//

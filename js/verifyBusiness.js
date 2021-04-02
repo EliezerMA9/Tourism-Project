@@ -1,26 +1,6 @@
-let container = document.getElementById("verifyContainer");
+let container = document.getElementById("cardContainer");
 
-/*
-Full business element
-container.innerHTML +=
-            `<div id="` + data[i].Rnc + `">` +
-            `<p> Hotel o rest: ` + data[i].TypeOf + `</p>` +
-            `<p> Nombre: ` + data[i].Name + `</p>` +
-            `<p> Dueño: ` + data[i].idOwner + `</p>` +
-            `<p> Rnc: ` + data[i].Rnc + `</p>` +
-            `<p> Descripcion: ` + data[i].Description + `</p>` +
-            `<p> Provincia: ` + data[i].Province + `</p>` +
-            `<p> Telefono: ` + data[i].PhoneNumber + `</p>` +
-            `<p> Categoria: ` + data[i].Stars + `</p>` + 
-            `<p> Afuera, etc: ` + data[i].KindOfEvent + `</p>` +
-            `<p> Cantidad de habitaciones: ` + data[i].NoOfRooms + `</p>` +
-            `<p> Servicios: ` + data[i].Services + `</p>` +
-            `<p> Images: ` + data[i].Image + `</p>` +
-            `<button class="` + data[i].Rnc +
-            `"onclick="verifyBusiness(this.className)">Verificar</button> </div>`;
-*/
-
-fetch("https://authentic-ether-303815.uc.r.appspot.com/business/showUnverified")
+fetch("https://finalproject-309315.uc.r.appspot.com/business/showUnverified")
   .then((response) => response.json())
   .then(function (data) {
     console.log(data);
@@ -38,59 +18,93 @@ fetch("https://authentic-ether-303815.uc.r.appspot.com/business/showUnverified")
       });
 
       if (data[i].TypeOf == "Hotel") {
-        container.innerHTML += `<div id="${data[i].Rnc}">
-          <p>${data[i].TypeOf}</p>
-          <p>Nombre: ${data[i].Name}</p>
-          <p>Dueño: ${data[i].idOwner}</p>
-          <p>Rnc: ${data[i].Rnc} </p>
-          <p>Descripcion: ${data[i].Description} </p>
-          <p>Provincia: ${data[i].Province} </p>
-          <p>Telefono: ${data[i].PhoneNumber} </p>
-          <p>Categoria: ${data[i].Stars} </p>
-          <p>Afuera, etc: ${data[i].KindOfEvent} </p>
-          <p>Cantidad de habitaciones: ${data[i].NoOfRooms} </p>
-          <p>Servicios: ${data[i].Services} </p>
-          <p>Images:
-          ${renderImages}
-          </p>
-          <button class="${data[i].Rnc}" onclick="verifyBusiness(this.className)">Verificar</button> 
-        </div>`;
-      } else {
-        container.innerHTML += `<div id="${data[i].Rnc}">
-          <p> ${data[i].TypeOf} </p>
-          <p> Nombre: ${data[i].Name} </p>
-          <p> Dueño: ${data[i].idOwner} </p>
-          <p> Rnc: ${data[i].Rnc} </p>
-          <p> Descripcion: ${data[i].Description} </p>
-          <p> Provincia: ${data[i].Province}  </p>
-          <p> Telefono: ${data[i].PhoneNumber} </p>
-          <p> Categoria: ${data[i].Stars} </p>
-          <p> Images: ${renderImages} </p>
-          <button class="${data[i].Rnc}"onclick="verifyBusiness(this.className)">Verificar</button> 
-        </div>`;
-      }
+        container.innerHTML += `
+        <section class="light-bg" id="verifyContainer">
 
-      document.getElementById(data[i].Rnc).style.marginBottom = "50px";
-      document.getElementById(data[i].Rnc).style.borderStyle = "solid";
-      document.getElementById(data[i].Rnc).style.borderColor = "red";
+        <div id="${data[i].CoordN}|${data[i].CoordW}">
+        <p>${data[i].TypeOf}</p>
+        <p>Nombre: ${data[i].Name}</p>
+        <p>Dueño: ${data[i].idOwner}</p>
+        <p>Rnc: ${data[i].Rnc} </p>
+        <p>Descripcion: ${data[i].Description} </p>
+        <p>Provincia: ${data[i].Province} </p>
+        <p>Telefono: ${data[i].PhoneNumber} </p>
+        <p>Categoria: ${data[i].Stars} </p>
+        <p>Afuera, etc: ${data[i].KindOfEvent} </p>
+        <p>Cantidad de habitaciones: ${data[i].NoOfRooms} </p>
+        <p>Servicios: ${data[i].Services} </p>
+        <p>CoordN: ${data[i].CoordN} </p>
+        <p>CoordW: ${data[i].CoordW} </p>
+        <p>Images:
+        ${renderImages}
+        </p>
+        <button class="${data[i].CoordN}+${data[i].CoordW}"onclick="verifyBusiness(this.className)">Verificar</button>
+        <button class="${data[i].CoordN}+${data[i].CoordW}"onclick="verifyBusiness(this.className)">Declinar</button>
+        </div>
+        </section>
+        `;
+      } else {
+        container.innerHTML += `
+        <section class="light-bg" id="verifyContainer">
+
+        <div id="${data[i].CoordN}|${data[i].CoordW}">
+        <p> ${data[i].TypeOf} </p>
+        <p> Nombre: ${data[i].Name} </p>
+        <p> Dueño: ${data[i].idOwner} </p>
+        <p> Rnc: ${data[i].Rnc} </p>
+        <p> Descripcion: ${data[i].Description} </p>
+        <p> Provincia: ${data[i].Province}  </p>
+        <p> Telefono: ${data[i].PhoneNumber} </p>
+        <p> Categoria: ${data[i].Stars} </p>
+        <p>CoordN: ${data[i].CoordN} </p>
+        <p>CoordW: ${data[i].CoordW} </p>
+        <p> Images: ${renderImages} </p>
+        <button class="${data[i].CoordN}+${data[i].CoordW}"onclick="verifyBusiness(this.className)">Verificar</button>
+        <button class="${data[i].CoordN}+${data[i].CoordW}"onclick="declineBusiness(this.className)">Declinar</button>
+        </div>
+        </section>
+        `;
+      }
     }
   });
 
-function verifyBusiness(toRemove) {
-  fetch("https://authentic-ether-303815.uc.r.appspot.com/business/verify", {
+function verifyBusiness(elemCoords) {
+  let coords = elemCoords.split("+");
+  fetch("https://finalproject-309315.uc.r.appspot.com/business/verify", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     mode: "cors",
     body: JSON.stringify({
-      rnc: toRemove,
+      coordN: coords[0],
+      coordW: coords[1],
       verify: 1,
     }),
   })
     .then((resp) => resp.json())
     .then((data) => {
       console.log(data);
-      document.getElementById(toRemove).remove();
+      location.reload();
+    });
+}
+
+function declineBusiness(elemCoords) {
+  let coords = elemCoords.split("+");
+  fetch("https://finalproject-309315.uc.r.appspot.com/business/decline", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    mode: "cors",
+    body: JSON.stringify({
+      coordN: coords[0],
+      coordW: coords[1],
+    }),
+  })
+    .then((resp) => resp.json())
+    .then((data) => {
+      console.log(data);
+      location.reload();
     });
 }

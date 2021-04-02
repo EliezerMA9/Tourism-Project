@@ -1,55 +1,61 @@
-// Variables
-
-var categoria = document.getElementById("inputCategoria");
-var provincia = document.getElementById("inputProvincia");
-var telefono = document.getElementById("inputTelefono");
-var habitaciones = document.getElementById("hotelRooms");
-var servicios_adicionales = document.getElementById("servicios_adicionales");
-var btn_agregar = document.getElementById("btn_add");
-var businessConcept = document.getElementById("businessConcept");
-var tipo_actividades = document.getElementById("kindOfEvent");
-var rnc = document.getElementById("rnc");
-var description = document.getElementById("description");
-
 function habilitar_input(elemento) {
   v = elemento.value;
+  let categoria = document.getElementById("form-group-categoria");
+  let provincia = document.getElementById("form-group-provincia");
+  let telefono = document.getElementById("form-group-telf");
+  let habitaciones = document.getElementById("form-group-habitaciones");
+  let servicios_adicionales = document.getElementById("form-group_serv-adic");
+  let btn_agregar = document.getElementById("btn_add");
+  let businessConcept = document.getElementById("form-group-concept-neg");
+  let rnc = document.getElementById("form-group-rnc");
+  let description = document.getElementById("form-group-desc-adic");
+  let file_img = document.getElementById("form-group-img");
+  let saveBtn = document.getElementById("saveBtn");
+  let servicios_add = document.getElementById("servicios_add");
 
   if (v == "Restaurante") {
-    categoria.disabled = true;
-    provincia.disabled = false;
-    telefono.disabled = false;
-    habitaciones.disabled = true;
-    servicios_adicionales.disabled = true;
-    btn_add.disabled = true;
-    businessConcept.disabled = false;
-    tipo_actividades.disabled = true;
-    rnc.disabled = false;
-    description.disabled = false;
+    provincia.style.display = "block";
+    telefono.style.display = "block";
+    businessConcept.style.display = "block";
+    rnc.style.display = "block";
+    file_img.style.display = "block";
+    saveBtn.style.display = "block";
+    description.style.display = "block";
   } else if (v == "Hotel") {
-    categoria.disabled = false;
-    provincia.disabled = false;
-    telefono.disabled = false;
-    habitaciones.disabled = false;
-    servicios_adicionales.disabled = false;
-    description.disabled = false;
-    btn_add.disabled = false;
-    rnc.disabled = false;
-    businessConcept.disabled = true;
+    categoria.style.display = "block";
+    provincia.style.display = "block";
+    telefono.style.display = "block";
+    file_img.style.display = "block";
+    habitaciones.style.display = "block";
+    servicios_adicionales.style.display = "block";
+    description.style.display = "block";
+    btn_agregar.style.display = "block";
+    saveBtn.style.display = "block";
+    servicios_add.style.display = "block";
+    rnc.style.display = "block";
   } else {
-    categoria.disabled = true;
-    provincia.disabled = true;
-    telefono.disabled = true;
-    habitaciones.disabled = true;
-    servicios_adicionales.disabled = true;
-    btn_add.disabled = true;
+    categoria.style.display = "none";
+    servicios_add.style.display = "none";
+    provincia.style.display = "none";
+    telefono.style.display = "none";
+    habitaciones.style.display = "none";
+    servicios_adicionales.style.display = "none";
+    description.style.display = "none";
+    btn_add.style.display = "none";
+    businessConcept.style.display = "none";
+    rnc.style.display = "none";
+    btn_agregar.style.display = "none";
+    saveBtn.style.display = "none";
+    file_img.style.display = "none";
+    businessConcept.style.display = "none";
   }
 }
 
 var marker; //variable del marcador
 var coords = {}; //coordenadas obtenidas con la geolocalización
 
-var latitude = "";
-var longitude = "";
+var coordsN = "";
+var coordsW = "";
 
 //Funcion principal
 initMap = function () {
@@ -71,8 +77,9 @@ initMap = function () {
 function setMapa(coords) {
   //Se crea una nueva instancia del objeto mapa
   var map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 7,
+    zoom: 15,
     center: new google.maps.LatLng(coords.lat, coords.lng),
+    disableDefaultUI: true,
   });
 
   //Creamos el marcador en el mapa con sus propiedades
@@ -97,8 +104,11 @@ function setMapa(coords) {
   marker.addListener("click", toggleBounce);
 
   marker.addListener("dragend", function (event) {
-    latitude = this.getPosition().lat();
-    longitude = this.getPosition().lng();
+    let cN = this.getPosition().lat();
+    let cW = this.getPosition().lng();
+
+    coordsN = cN;
+    coordsW = cW;
   });
 }
 
@@ -110,31 +120,6 @@ function toggleBounce() {
     marker.setAnimation(google.maps.Animation.BOUNCE);
   }
 }
-var btn_saveUbicacion = document.getElementById("btn_saveUbicacion");
-
-btn_saveUbicacion.addEventListener("click", (e) => {
-  e.preventDefault();
-
-  (async () => {
-    const rawResponse = await fetch(
-      "http://0cbd09cc313f.ngrok.io/business/testlocation",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-
-        body: JSON.stringify({
-          coordN: latitude, // Variable universal con la coordenada de LATITUD
-          coordW: longitude, // Variable universal con la coordenada de LONGITUD
-        }),
-      }
-    );
-    const content = await rawResponse;
-    console.log(content);
-  })();
-});
 
 /*
 
@@ -148,14 +133,8 @@ document.getElementById("btn_add").addEventListener("click", () => {
   if (selected == "") {
     console.log("hola");
   } else {
-    parent.innerHTML +=
-      `<div id="` +
-      selected +
-      `" class="hotelService">` +
-      selected +
-      `<button class="` +
-      selected +
-      `" type="button" onclick="remove(this);">x</button> </div>`;
+    parent.value += selected;
+    parent.value += ", ";
   }
 });
 
@@ -180,94 +159,36 @@ document.getElementById("saveBtn").addEventListener("click", () => {
   let businessProvince = getSelectedOption("inputProvincia");
   let businessPhoneNumber = document.getElementById("inputTelefono").value;
   let hotelRooms = document.getElementById("hotelRooms").value;
-  let services = document.getElementsByClassName("hotelService");
-  let hotelServices = [];
+  let inputImg = document.getElementById("inputImg").value;
+  let hotelServices = document.getElementById("servicios_add").value;
 
-  //let kindOfEvent = getSelectedOption("kindOfEvent");
-  /* let coordN =
-  let coordW = */
+  var datosForm = new FormData();
+  datosForm.append("idOwner", 0);
+  datosForm.append("file", inputImg);
+  datosForm.append("name", businessName);
+  datosForm.append("coordN", coordsN);
+  datosForm.append("coordW", coordsW);
+  datosForm.append("province", businessProvince);
+  datosForm.append("hotelRooms", hotelRooms);
+  datosForm.append("description", businessDescription);
+  datosForm.append("type", businessType);
+  datosForm.append("telefono", businessPhoneNumber);
+  datosForm.append("hotelServices", hotelServices);
+  datosForm.append("rnc", businessRnc);
+  datosForm.append("hotelStars", hotelStars);
+  datosForm.append("concept", businessConcept);
 
-  for (let i = 0; i < services.length; i++) {
-    hotelServices.push(services[i].id);
-  }
+  console.log(datosForm);
 
-  let jsonToSend = {};
-  let idOwner = "0";
+  fetch("https://finalproject-309315.uc.r.appspot.com/business/register", {
+    method: "POST",
 
-  if (businessType == "Restaurante") {
-    jsonToSend = {
-      idOwner: 9,
-      name: businessName,
-      rnc: businessRnc,
-      description: businessDescription,
-      type: businessType,
-      stars: hotelStars,
-      province: businessProvince,
-      phoneNumber: businessPhoneNumber,
-      rooms: "0",
-      services: [""],
-      images: [
-        `"https://storage.googleapis.com/finalproject_images_bucket/${businessRnc}_0.png"`,
-        `"https://storage.googleapis.com/finalproject_images_bucket/${businessRnc}_1.png"`,
-        `"https://storage.googleapis.com/finalproject_images_bucket/${businessRnc}_2.png"`,
-      ],
-      concept: businessConcept,
-      coordN: latitude.toString(),
-      coordW: longitude.toString(),
-    };
-  } else {
-    jsonToSend = {
-      idOwner: 9,
-      name: businessName,
-      rnc: businessRnc,
-      description: businessDescription,
-      type: businessType,
-      stars: hotelStars,
-      province: businessProvince,
-      phoneNumber: businessPhoneNumber,
-      rooms: hotelRooms,
-      services: hotelServices,
-      images: [
-        /* `https://storage.googleapis.com/finalproject_images_bucket/${businessRnc}_0.png`,
-        `https://storage.googleapis.com/finalproject_images_bucket/${businessRnc}_1.png`,
-        `https://storage.googleapis.com/finalproject_images_bucket/${businessRnc}_2.png`, */
-      ],
-      concept: "0",
-      coordN: latitude.toString(),
-      coordW: longitude.toString(),
-    };
-  }
-
-  let nextForm = `<body>
-    <div style="border-style: solid; border-color: aquamarine;">
-        <form action="https://authentic-ether-303815.uc.r.appspot.com/business/uploadImages" id="businessImages" method="post" enctype="multipart/form-data">
-            <label for="Elija las imagenes para su negocio">Servicios Adicionales</label>
-            <br>
-            <input id="filestowait" type="file" name="file" multiple/>
-            <br>
-            <br>
-            <button id="send">Enviar</button>
-            <input id="rnc" name="rnc" value="${businessRnc}" style="visibility: hidden;">
-          </form>
-    </div>
-  `;
-
-  console.log(jsonToSend);
-
-  /* fetch("https://authentic-ether-303815.uc.r.appspot.com/business/register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      mode: "cors",
-      body: JSON.stringify(jsonToSend),
-    })
+    mode: "cors",
+    body: datosForm,
+  })
     .then((resp) => resp.json())
     .then((data) => {
       console.log(data);
-
-      document.getElementById("htmlEnd").innerHTML = nextForm;
-    }); */
-
-  console.log(jsonToSend);
+      console.log(datosForm);
+    });
 });

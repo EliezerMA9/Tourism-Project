@@ -28,6 +28,9 @@
     <!-- Main CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/res.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
 </head>
 
 <body>
@@ -43,7 +46,7 @@
             </button>
                         <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
                             <ul class="navbar-nav">
-                                <
+                                
                                 <li class="nav-item active">
                                     <a class="nav-link" href="#">Sobre nosotros</a>
                                 </li>
@@ -58,12 +61,54 @@
     </div>
     <!--//END HEADER -->
     <!--============================= DETAIL =============================-->
+    <div class="contenedor">
+        <main  class="contenido contenedor">
 
-  <section class="main-block1 light-bg">
+    <section class="hacer">
+        <h2>Hoteles</h2>
+        <div id="cardContainer" class="contenedor-cards">
+                <!-- <div class="card">
+                    <img src="images/evento2.jpg">
+                    <div class="info">
+                        <p class="categoria paseo">Hotel</p>
+                        <p class="titulo">Paradaise</p>
+                        <p class="precio">$1,200 por persona</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="images/evento2.jpg">
+                    <div class="info">
+                        <p class="categoria concierto">Restaurante</p>
+                        <p class="titulo">Los Ángeles</p>
+                        <p class="precio">$300 por persona</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="images/evento2.jpg">
+                    <div class="info">
+                        <p class="categoria clase">Actividad</p>
+                        <p class="titulo">Tour Colonial</p>
+                        <p class="precio">$400 por persona</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img href="https://www.youtube.com/" src="images/evento2.jpg">
+                    <div class="info">
+                        <p class="categoria paseo">Paseo en Bici</p>
+                        <p class="titulo">Paseo en las Montañas</p>
+                        <p class="precio">$200 por persona</p>
+                    </div>
+                </div>  -->
+                <!--.card-->
+        </div> <!--.columnas4 cuadros-->
+    </section>
+        </main>
+    </div>
+  <!-- <section class=" main-block1 light-bg">
             <div class="contendor_buscar">
               <div class="flex_buscar">
                   <div class="flex_hijo_buscar">
-                      <p>Eventos</p>
+                      <p>Restaurantes</p>
                   </div>
                   <div class="flex_hijo_buscar">
                       <form class="form-inline my-2 my-lg-0">
@@ -73,7 +118,7 @@
                   </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="restaurantes row">
 
                 <div class="col-md-4 featured-responsive">
                     <div class="featured-place-wrap">
@@ -167,8 +212,8 @@
                 </div>
             </div>
       </div>
-  </section>
-    <!--//END ADD LISTING -->
+  </section> -->
+    <!-- //END ADD LISTING -->
     <!--============================= FOOTER =============================-->
     <footer class="main-block_footer dark-bg" >
 
@@ -189,43 +234,11 @@
 
 
 
-    <!-- jQuery, Bootstrap JS. -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/detallesV.js"></script>
 
 
-    <script>
-        $(".map-icon").click(function() {
-            $(".map-fix").toggle();
-        });
-    </script>
-    <script>
-        // Want to customize colors? go to snazzymaps.com
-        function myMap() {
-            var maplat = $('#map').data('lat');
-            var maplon = $('#map').data('lon');
-            var mapzoom = $('#map').data('zoom');
-            // Styles a map in night mode.
-            var map = new google.maps.Map(document.getElementById('map'), {
-                center: {
-                    lat: maplat,
-                    lng: maplon
-                },
-                zoom: mapzoom,
-                scrollwheel: false
-            });
-            var marker = new google.maps.Marker({
-                position: {
-                    lat: maplat,
-                    lng: maplon
-                },
-                map: map,
-                title: 'We are here!'
-            });
-        }
-    </script>
+
     <!-- Map JS (Please change the API key below. Read documentation for more info) -->
     <script src="https://maps.googleapis.com/maps/api/js?callback=myMap&key=AIzaSyDMTUkJAmi1ahsx9uCGSgmcSmqDTBF9ygg"></script>
 </body>

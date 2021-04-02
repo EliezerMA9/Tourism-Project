@@ -1,25 +1,26 @@
 //Variables
-var formRegister = document.getElementById('formregister')
+var formRegister = document.getElementById("formregister");
 
 //Event Listeners
 
-
-formRegister.addEventListener('submit', (e) => {
+formRegister.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  var datosRegForm = new FormData(formRegister);
-  console.log(datosRegForm);
-  console.log(datosRegForm.get('name'));
-  console.log(datosRegForm.get('email'));
-  console.log(datosRegForm.get('password'));
+  let jsontosend = {
+    name: document.getElementById("username").value,
+    email: document.getElementById("email").value,
+    password: document.getElementById("pass").value,
+  };
 
-  fetch('https://authentic-ether-303815.uc.r.appspot.com/user/register', {
+  fetch(
+    `http://e927a3b4e5f2.ngrok.io/user/register?name=${jsontosend.name}&email=${jsontosend.email}&password=${jsontosend.password}`,
+    {
+      mode: "cors",
       method: "POST",
-      body: datosRegForm
-    })
-    .then(resp => resp.json())
-    .then(data => {
+    }
+  )
+    .then((resp) => resp.json())
+    .then((data) => {
       console.log(data);
-    })
-
-})
+    });
+});

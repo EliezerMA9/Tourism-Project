@@ -1,6 +1,6 @@
-fetch("https://authentic-ether-303815.uc.r.appspot.com/business/showVerified")
+fetch("https://finalproject-309315.uc.r.appspot.com/search")
   .then((response) => response.json())
-  .then(function(data) {
+  .then(function (data) {
     console.log(data);
     for (let i = 0; i < data.length; i++) {
       tempstrtoreplace = data[i].Image.replaceAll(",", "|");
@@ -19,12 +19,13 @@ fetch("https://authentic-ether-303815.uc.r.appspot.com/business/showVerified")
         tempstrtoreplace.length
       );
       console.log({
-        firstImage, secondImage, thirdImage
+        firstImage,
+        secondImage,
+        thirdImage,
       });
       //<p> <b>Afuera, etc: </b> ${data[i].KindOfEvent} </p>
       if (data[i].TypeOf == "Hotel") {
-        container.innerHTML +=
-          `<div class="card_business" id="${data[i].Rnc}">
+        container.innerHTML += `<div class="card_business" id="${data[i].Rnc}">
           <h5>${data[i].TypeOf}</h5><hr>
           <p> <b>Nombre: </b> ${data[i].Name}</p>
           <p> <b>Dueño: </b> ${data[i].idOwner}</p>
@@ -42,8 +43,7 @@ fetch("https://authentic-ether-303815.uc.r.appspot.com/business/showVerified")
           <img src="${thirdImage}" class="businessImage" > </p>
         </div>`;
       } else {
-        container.innerHTML +=
-          `<div class="card_business" id="${data[i].Rnc}">
+        container.innerHTML += `<div class="card_business" id="${data[i].Rnc}">
             <h5>${data[i].TypeOf} </h5><hr>
             <p> <b>Nombre: </b> ${data[i].Name} </p>
             <p> <b>Dueño: </b> ${data[i].idOwner} </p>

@@ -1,26 +1,22 @@
-container = document.getElementById("hotelsContainer");
+let container = document.getElementById("cardContainer");
 
-fetch("https://authentic-ether-303815.uc.r.appspot.com/search/byType", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-  },
-  mode: "cors",
-  body: JSON.stringify({
-    type: "Hotel",
-  }),
-})
+fetch(
+  "https://finalproject-309315.uc.r.appspot.com/search?type=Business&busType=Hotel"
+)
   .then((resp) => resp.json())
   .then((data) => {
     console.log(data);
-
-    for (let card of data) {
-      container.innerHTML += `<div class='hotelCard' style="border-color: red; border-style: solid;"> 
-      
-        ${JSON.stringify(card)}
-        <br>
-        <br>
-        </div>
-        `;
-    }
+    data.forEach((element) => {
+      container.innerHTML += `
+                <div class="card">
+                <img src="images/evento2.jpg">
+                <div class="info">
+                    <p class="categoria concierto">${element.TypeOf}</p>
+                    <p class="titulo">${element.Name}</p>
+                    <p class="precio fas fa-map-marker-alt">  ${element.Province}</p>
+                </div>
+             </div>  `;
+    });
   });
+
+//
