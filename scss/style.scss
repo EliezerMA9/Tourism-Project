@@ -1,7 +1,7 @@
 /*------------------------------------------------------------------
 Theme Name: Listing & Directory Website Template
 Version: 1.0
-Author: Surjith S M
+
 -------------------------------------------------------------------*/
 
 
@@ -14,11 +14,11 @@ body {
 }
 
 h1 {
-    font-size: 72px;
+    font-size: 52px;
     color: #fff;
     font-weight: 300;
     @media (max-width: 1200px) {
-        font-size: 52px;
+        font-size: 50px;
     }
     @media (max-width: 992px) {
         font-size: 40px;
@@ -80,7 +80,7 @@ p {
    ============================================================== */
 
 // Navbar
-.nav-menu {
+.nav-menu dark-bg {
     position: absolute;
     z-index: 1;
     top: 0;
@@ -90,9 +90,9 @@ p {
     // border-bottom: 1px solid #636363;
 }
 
-.nav-menu-2 {
-    position: inherit;
-}
+// .nav-menu dark-bg-2 {
+//     position: inherit;
+// }
 
 .navbar {
     padding: .5rem 0;

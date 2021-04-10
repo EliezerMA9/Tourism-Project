@@ -1,39 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Document</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+ 
+  let Maps = L.map("map").setView([18.83634890534054,-70.11357550890317], 8);
 
-  <style type="text/css">
-    #map{
-      width: 100%;
-      height: 70%;
-    }
-    html, body{
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
-  </style>
-</head>
-<body>
-
-  <div id="map"></div>
-
-
-
-<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-<script type="text/javascript">
-  
-  let map = L.map("map").setView([18.83634890534054,-70.11357550890317], 8);
-
- L.tileLayer('https://mt1.google.com/vt/lyrs=r&x={x}&y={y}&z={z}', {attribution: '<a href="https://www.google.es/maps/preview">Google Maps</a>'}).addTo(map);
+ L.tileLayer('https://mt1.google.com/vt/lyrs=r&x={x}&y={y}&z={z}', {attribution: '<a href="https://www.google.es/maps/preview">Google Maps</a>'}).addTo(Maps);
  
 
  // Insertando una leyenda en el mapa
 var legend = L.control({position: 'bottomright'});
  
-legend.onAdd = function (map) {
+legend.onAdd = function (Maps) {
  
 var div = L.DomUtil.create('div', 'info legend');
  
@@ -42,7 +16,7 @@ div.innerHTML +=
  return div;
 };
  
-legend.addTo(map);
+legend.addTo(Maps);
 
 // var title = L.control();
    
@@ -100,9 +74,9 @@ fetch(
     console.log(data);
     data.forEach((element) => {
 
-    let markerHotel = L.marker([element.CoordN, element.CoordW], {icon: hotelIcon}).addTo(map).bindPopup("Hotel: "+element.Name);
+    let markerHotel = L.marker([element.CoordN, element.CoordW], {icon: hotelIcon}).addTo(Maps).bindPopup("Hotel: "+element.Name);
          markerHotel.on('click', function() {
-    map.flyTo([element.CoordN, element.CoordW],14);
+    Maps.flyTo([element.CoordN, element.CoordW],14);
   });
 
     });
@@ -116,9 +90,9 @@ fetch(
     console.log(data);
     data.forEach((element) => {
 
-  let markerRestaurant = L.marker([element.CoordN, element.CoordW], {icon: restauranteIcon}).addTo(map).bindPopup("Restaurante: "+element.Name);
+  let markerRestaurant = L.marker([element.CoordN, element.CoordW], {icon: restauranteIcon}).addTo(Maps).bindPopup("Restaurante: "+element.Name);
   markerRestaurant.on('click', function() {
-    map.flyTo([element.CoordN, element.CoordW],14);
+    Maps.flyTo([element.CoordN, element.CoordW],14);
   });
 
     });
@@ -131,9 +105,9 @@ fetch(
     console.log(data);
     data.forEach((element) => {
 
-  let markerDestino = L.marker([element.CoordN,element.CoordW], {icon: destinoIcon}).addTo(map).bindPopup("Destino Turistico: "+element.Name);
+  let markerDestino = L.marker([element.CoordN,element.CoordW], {icon: destinoIcon}).addTo(Maps).bindPopup("Destino Turistico: "+element.Name);
    markerDestino.on('click', function() {
-    map.flyTo([element.CoordN, element.CoordW],14);
+    Maps.flyTo([element.CoordN, element.CoordW],14);
   });
 
 });
@@ -147,17 +121,10 @@ fetch(
     console.log(data);
     data.forEach((element) => {
 
-  let markerActivities = L.marker([element.CoordN, element.CoordW], {icon:act_t_Icon}).addTo(map).bindPopup("Actividad Turistica: "+element.Name);
+  let markerActivities = L.marker([element.CoordN, element.CoordW], {icon:act_t_Icon}).addTo(Maps).bindPopup("Actividad Turistica: "+element.Name);
   markerActivities.on('click', function() {
-    map.flyTo([element.CoordN, element.CoordW],14);
+    Maps.flyTo([element.CoordN, element.CoordW],14);
   });
 
     });
   });
-
-// L.marker([10.496093,-66.881935]).addTo(map).
-
-</script>
-
-</body>
-</html>

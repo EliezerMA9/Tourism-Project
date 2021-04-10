@@ -22,7 +22,7 @@ fetch("https://finalproject-309315.uc.r.appspot.com/business/showUnverified")
         <section class="light-bg" id="verifyContainer">
 
         <div id="${data[i].CoordN}|${data[i].CoordW}">
-        <p>${data[i].TypeOf}</p>
+        <h5>${data[i].TypeOf}</h5>
         <p>Nombre: ${data[i].Name}</p>
         <p>Dueño: ${data[i].idOwner}</p>
         <p>Rnc: ${data[i].Rnc} </p>
@@ -38,8 +38,8 @@ fetch("https://finalproject-309315.uc.r.appspot.com/business/showUnverified")
         <p>Images:
         ${renderImages}
         </p>
-        <button class="${data[i].CoordN}+${data[i].CoordW}"onclick="verifyBusiness(this.className)">Verificar</button>
-        <button class="${data[i].CoordN}+${data[i].CoordW}"onclick="verifyBusiness(this.className)">Declinar</button>
+        <button class="btn1" id="${data[i].CoordN}+${data[i].CoordW}" onclick="verifyBusiness(this.id)">Verificar</button>
+        <button class="btn2" id="${data[i].CoordN}+${data[i].CoordW}" onclick="declineBusiness(this.id)">Declinar</button>
         </div>
         </section>
         `;
@@ -48,7 +48,7 @@ fetch("https://finalproject-309315.uc.r.appspot.com/business/showUnverified")
         <section class="light-bg" id="verifyContainer">
 
         <div id="${data[i].CoordN}|${data[i].CoordW}">
-        <p> ${data[i].TypeOf} </p>
+        <h5>${data[i].TypeOf}</h5>
         <p> Nombre: ${data[i].Name} </p>
         <p> Dueño: ${data[i].idOwner} </p>
         <p> Rnc: ${data[i].Rnc} </p>
@@ -59,8 +59,8 @@ fetch("https://finalproject-309315.uc.r.appspot.com/business/showUnverified")
         <p>CoordN: ${data[i].CoordN} </p>
         <p>CoordW: ${data[i].CoordW} </p>
         <p> Images: ${renderImages} </p>
-        <button class="${data[i].CoordN}+${data[i].CoordW}"onclick="verifyBusiness(this.className)">Verificar</button>
-        <button class="${data[i].CoordN}+${data[i].CoordW}"onclick="declineBusiness(this.className)">Declinar</button>
+        <button class="btn1" id="${data[i].CoordN}+${data[i].CoordW}" onclick="verifyBusiness(this.id)">Verificar</button>
+        <button class="btn2" id="${data[i].CoordN}+${data[i].CoordW}" onclick="declineBusiness(this.id)">Declinar</button>
         </div>
         </section>
         `;
@@ -69,42 +69,48 @@ fetch("https://finalproject-309315.uc.r.appspot.com/business/showUnverified")
   });
 
 function verifyBusiness(elemCoords) {
-  let coords = elemCoords.split("+");
-  fetch("https://finalproject-309315.uc.r.appspot.com/business/verify", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    mode: "cors",
-    body: JSON.stringify({
-      coordN: coords[0],
-      coordW: coords[1],
-      verify: 1,
-    }),
-  })
-    .then((resp) => resp.json())
-    .then((data) => {
-      console.log(data);
-      location.reload();
-    });
+  let i = confirm("¿Seguro que desea aceptar este negocio?");
+  if (i == true) {
+    console.log("si");
+    let coords = elemCoords.split("+");
+    fetch("https://finalproject-309315.uc.r.appspot.com/business/verify", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      mode: "cors",
+      body: JSON.stringify({
+        coordN: coords[0],
+        coordW: coords[1],
+      }),
+    })
+      .then((resp) => resp.json())
+      .then((data) => {
+        console.log(data);
+        location.reload();
+      });
+  }
 }
 
 function declineBusiness(elemCoords) {
-  let coords = elemCoords.split("+");
-  fetch("https://finalproject-309315.uc.r.appspot.com/business/decline", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    mode: "cors",
-    body: JSON.stringify({
-      coordN: coords[0],
-      coordW: coords[1],
-    }),
-  })
-    .then((resp) => resp.json())
-    .then((data) => {
-      console.log(data);
-      location.reload();
-    });
+  let i = confirm("¿Seguro que desea declinar este negocio?");
+  if (i == true) {
+    let coords = elemCoords.split("+");
+    fetch("https://finalproject-309315.uc.r.appspot.com/business/decline", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      mode: "cors",
+      body: JSON.stringify({
+        coordN: coords[0],
+        coordW: coords[1],
+      }),
+    })
+      .then((resp) => resp.json())
+      .then((data) => {
+        console.log(data);
+        location.reload();
+      });
+  }
 }
